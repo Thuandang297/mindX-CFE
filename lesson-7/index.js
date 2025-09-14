@@ -1,97 +1,74 @@
-//Excercise 1:
-// let ketqua = 1+2+3+...+100
-
-//Buoc 1:
-// sum = 0;
-// i=1;
-// sum=sum+i;//1
-// //Buoc 2
-// sum = 1;
-// i = 2;
-// sum =sum +i = 1+2 =3
-
-// let sum = 0;
-// for (let i = 1; i <= 100; i++) {
-//     sum += i;
-// }
-// let i = 1;
-// while (i <= 100) {
-//     // sum+=i;
-//     sum = sum + i;
-//     i = i + 1;
-// }
-// console.log("🚀 ~ sum:", sum)
-
-
-//Excercise 2:
-// for (let i = 0; i <= 100; i++) {
-//     if ((i % 3 == 0) && (i % 5 == 0)) {
-//         console.log("🚀 ~ i:", i)
-//     }
-// }
-// let i = 0;
-
-// while(i<=100){
-//     if ((i % 3 == 0) && (i % 5 == 0)) {
-//         console.log("🚀 ~ i:", i)
-//     }
-//     i++;
-// }
-
-
-// while(i<=100){
-//     if ((i % 3 == 0) || (i % 5 == 0)) {
-//         console.log("🚀 ~ i:", i)
-//     }
-//     i++;
-// }
-//Excercise 3:
-//Giai thừa của một số:Tích của 1-> số đó
-// 3! = 1*2*3
-// 5! = 1*2*3*4*5
-
-//Xác định input
-// let n = 5.4;
-// if(!Number.isInteger(n)){
-//     console.log('Khong hop le!');
-// }
-// else{
-//     console.log('hop le');
-// }
-
-
-//Tạo một biến để lưu kết quả trả về giai thừa của n
-// let result = 1;
-// for (let i = 1; i <= n; i++) {
-//     console.log("🚀 ~ i:", i)
-//     // console.log("🚀 ~ result before:", result)
-
-//     result = result * i;
-
-//     // console.log("🚀 ~ result after:", result)
-
-// }
-// console.log("🚀 ~ result finally:", result)
-
-
-
-// let j = 1;
-
-// let resultWhile = 1;
-// while (j <= n) {
-//     resultWhile = resultWhile * j;
-//     j = j + 1;
-// }
-// console.log("🚀 ~ resultWhile:", resultWhile)
-
-//Excerise 4:
-for (let x = 2; x <= 9; x++) {
-    console.log('*******************Bảng cửu chương '+x+'***********************')
-    for (let y = 1; y <= 10; y++) {
-        let ketQua = x*y;
-        console.log(`${x} x ${y} = ${ketQua}`)
-        // console.log(x+ 'x' +y+ '=' + x*y)
-    }
+// Excercise 1: Tính tổng 1 + 2 + ... + n
+let n1 = Number(prompt("Nhập số n để tính tổng 1+2+...+n:"));
+if (Number.isInteger(n1) && n1 > 0) {
+  let sum = 0;
+  for (let i = 1; i <= n1; i++) {
+    sum += i;
+  }
+  console.log("Tổng:", sum);
+} else {
+  console.log("Vui lòng nhập số nguyên dương!");
 }
 
-//Excersise 5:
+// Excercise 2: In ra các số từ 0..100 chia hết cho 3 và 5
+console.log("Các số chia hết cho 3 và 5:");
+for (let i = 0; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log(i);
+  }
+}
+
+// Excercise 3: Tính giai thừa n!
+let n2 = Number(prompt("Nhập số n để tính giai thừa n!:"));
+if (Number.isInteger(n2) && n2 >= 0) {
+  let factorial = 1;
+  for (let i = 1; i <= n2; i++) {
+    factorial *= i;
+  }
+  console.log(`${n2}! = ${factorial}`);
+} else {
+  console.log("Vui lòng nhập số nguyên không âm!");
+}
+
+// Excercise 4: Bảng cửu chương
+console.log("******** Bảng cửu chương ********");
+for (let x = 2; x <= 9; x++) {
+  console.log(`---- Bảng nhân ${x} ----`);
+  for (let y = 1; y <= 10; y++) {
+    console.log(`${x} x ${y} = ${x * y}`);
+  }
+}
+
+// Excercise 5: Chuyển số thập phân sang nhị phân
+let n3 = Number(prompt("Nhập số nguyên để đổi sang nhị phân:"));
+if (Number.isInteger(n3) && n3 >= 0) {
+  let binary = "";
+  let temp = n3;
+  while (temp > 0) {
+    binary = (temp % 2) + binary;
+    temp = Math.floor(temp / 2);
+  }
+  console.log(`${n3} (thập phân) = ${binary || "0"} (nhị phân)`);
+} else {
+  console.log("Vui lòng nhập số nguyên không âm!");
+}
+
+// Excercise 6: Tính biểu thức sqrt(0 + sqrt(1 + ... sqrt(n)))
+let n4 = Number(prompt("Nhập số n cho bài toán sqrt lồng nhau (Ex6):"));
+if (Number.isInteger(n4) && n4 >= 0) {
+  let result6 = 0;
+  for (let i = 0; i <= n4; i++) {
+    result6 = Math.sqrt(i + result6);
+  }
+  console.log("Kết quả Ex6:", result6);
+}
+
+// Excercise 7: Tính biểu thức sqrt(n + sqrt(n-1 + ... sqrt(1))))
+let n5 = Number(prompt("Nhập số n cho bài toán sqrt lồng ngược (Ex7):"));
+if (Number.isInteger(n5) && n5 > 0) {
+  let result7 = 0;
+  for (let i = n5; i > 0; i--) {
+    result7 = Math.sqrt(i + result7);
+  }
+  console.log("Kết quả Ex7:", result7);
+}
