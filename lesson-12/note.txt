@@ -1,0 +1,17 @@
+1.Tổng quan về DOM
+-Là đại diện cho câú trúc tài liệu HTML dưới dạng cây đối tượng
+
+2.Một số cách truy xuất 1 phần tử bằng js
+- document.getElementById(id) //Lấy ra phần tử đầu tiên có id
+- document.getElementByClassName(className)//Lấy ra các phần tử có className.
+- document.getElementByTagName(tagName)//Lấy ra các phần tử theo tên thẻ
+- document.querySelector(id) //lấy ra phần tử đầu tiên thoả mãn điều kiện
+- document.querySelectorAll(id) //Lấy ra toàn bộ phần tử thoả mãn điều kiện
+
+3.Một số cách thao tác
+-innerHTML => chỉnh sửa hoặc lấy ra các thẻ html bên trong thẻ được chọn
+-innerText => Lấy ra văn bản bên trong thẻ
+
+4.Thao tác bằng sự kiện
+-sử dụng sự kiện addEvents(click, callBack)
+-sử dụng dom.onlick()

@@ -18,7 +18,7 @@ element3.innerText = "Tôi là siêu nhân Gao!";
 
 //Sửa nội dung cho cả 3 thẻ
 for (let i = 0; i < element1.length; i++) {
-    const item = element1[i];
-    item.innerText = "I am Superman!"
+  const item = element1[i];
+  item.innerText = "I am Superman!"
 }
 
