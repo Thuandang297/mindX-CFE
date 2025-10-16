@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Box model & position</title>
     <style>
-        .grid-parent{
-            display: grid;
-            grid-template-rows: 200px 200px;
-            grid-gap: 10px;
-            grid-column-gap: 20px;
-            grid-row-gap: 40px;
-            grid-template-columns: 100px 100px 100px;
-        }
-        .box-1{
-            background-color: red;
+        .block-element {
+            display: block;
         }
 
-        .box-2{
-            background-color: blue;
+        .inline-element {
+            display: inline;
         }
-        .box-3{
-            background-color: green;
+
+        .inline-block-element {
+            display: inline-block;
         }
-        .box-4{
-            background-color: blueviolet;
+
+        .none-element {
+            display: none;
         }
     </style>
 </head>
+
 <body>
-    <div class="grid-parent">
-        <div class="box-1"></div>
-        <div class="box-2"></div>
-        <div class="box-3"></div>
-        <div class="box-4"></div>
-    </div>
+    <div class="block-element">Block Element</div>
+    <span class="inline-element">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates soluta assumenda, esse error debitis voluptate excepturi officia labore earum quibusdam minus aspernatur tenetur sint voluptatem fuga? Perspiciatis eveniet accusamus tenetur!
+    Beatae, excepturi! Eveniet, fugit maxime repellat libero veniam recusandae repudiandae sequi aut porro, incidunt fugiat distinctio minima facilis nesciunt! Praesentium exercitationem earum tenetur in error hic laboriosam voluptatem ut natus?</span>
+    <div class="inline-block-element">Inline-Block Element</div>
+    <div class="none-element">This will not be displayed</div>
 </body>
+
 </html>

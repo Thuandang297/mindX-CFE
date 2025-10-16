@@ -1,0 +1,112 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    padding: 0px 128px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0px;
+    align-items: center;
+
+}
+
+.start-nav {
+    display: flex;
+    gap: 16px;
+}
+
+.start-nav img {
+    width: 40px;
+    height: 40px;
+}
+
+.start-nav h3 {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 40px;
+    color: #191825;
+}
+
+.menus-nav {
+    display: flex;
+    gap: 64px;
+}
+
+.menus-nav p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 120%;
+    color: #19182580;
+}
+
+
+.btn-nav {
+    display: flex;
+}
+
+.btn-nav button {
+    background-color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 120%;
+    color: #222831;
+}
+
+#sign-up {
+    background-color: #5D50C6;
+    color: #EEEEEE;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* PC 1023=> 1440px */
+
+@media (max-width:1440px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Tablet 430 => 1023px */
+
+@media (max-width:1023px) {
+    .container {
+        padding: 0px 64px;
+    }
+
+    .menus-nav {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+}
+
+/* Mobile < 430px */
+
+@media (max-width:430px) {
+    .btn-nav {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: row-reverse;
+    }
+
+    .container {
+        padding: 0px 16px;
+    }
+}
