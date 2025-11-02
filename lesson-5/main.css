@@ -72,14 +72,14 @@ button {
 
 /* desktop */
 
-@media (min-width: 1440px) {
+@media (min-width:1024px) {
     .menu-icon {
         display: none;
     }
 }
 
 /* tablet */
-@media (max-width: 1439px) {
+@media (max-width:1023px) {
     .list-menu {
         display: none;
     }
@@ -91,7 +91,7 @@ button {
 }
 
 /* phone */
-@media (max-width: 1023px) {
+@media (max-width:430px) {
     .list-menu {
         display: none;
     }
