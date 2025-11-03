@@ -187,3 +187,39 @@ const ascendingOrder = (array) => {
 }
 console.log('🚀 ~ ascendingOrder([12, 33, 45, 7, 89]):', ascendingOrder([12, 33, 45, 7, 89]))
 // Output: [7, 12, 33, 45, 89]
+
+//Bài 14:Tách các từ trong một chuỗi thành một mảng các chuỗi.
+
+//Input :"This is a test"
+const input14 = "This is a test"
+//Output: ["This", "is", "a", "test"]
+const splitWords = (str) => {
+    let splitArray = [];
+    let words = '';
+    for (let index = 0; index < str.length; index++) {
+        const element = str[index];
+        if (element !== ' ') {
+            words += element;
+        }
+        else {
+            splitArray[splitArray.length] = words;
+            words = '';
+        }
+    }
+}
+splitWords(input14)
+// Bài 15:Tính tổng của tất cả các giá trị là số trong đối tượng
+
+// Input: { a: 1, b: 'hello', c: 3, d: 'world' };
+const input15 = { a: 1, b: 'hello', c: 3, d: 'world' }
+const sumValuesInObject = (obj) => {
+    let sum = 0;
+    for (const key in obj) {
+        if (!isNaN(obj[key])) {
+            sum += obj[key]
+        }
+    }
+    return sum;
+}
+sumValuesInObject(input15);
+// Output: 4
