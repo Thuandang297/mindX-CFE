@@ -64,23 +64,45 @@
 
 
 //Bài 4:
-
 //Lấy ra thẻ input nhập nội dung
+const dataLocalStorage = localStorage.getItem('arrayList');
+let arrayList = dataLocalStorage ? dataLocalStorage.split(',') : [];
+if (arrayList.length > 0) {
+  arrayList.forEach(element => {
+    const newTodoHTML = `
+  <div class="todo" style="display: flex;">
+    <input class="checkbox" type="checkbox">
+    <p>${element}</p>
+  </div>
+`;
+    const listTodo = document.querySelector('.list_todos');
+    if (listTodo) {
+      listTodo.innerHTML += newTodoHTML; // Thêm vào cuối
+    }
+  });
+}
+const button = document.querySelector('.btn_add');
 
-
-const button = document.querySelector('.btn-add');
+//Xử lý sự kiện click button thêm mới todo, tại đây sẽ thực hiện thêm mới một phần tử con bằng cách nối chuỗi html
 button.addEventListener('click', function () {
+  const inputText = document.querySelector('.input_text');
+  const inputValue = inputText.value;
+  const newTodoHTML = `
+    <div class="todo" style="display: flex;">
+      <input class="checkbox" type="checkbox">
+      <p>${inputValue}</p>
+    </div>
+  `;
+  const listTodo = document.querySelector('.list_todos');
+  if (listTodo) {
+    listTodo.innerHTML += newTodoHTML; // Thêm vào cuối
+  }
+  arrayList.push(inputValue);
+  inputText.value = '';
+  localStorage.setItem('arrayList', arrayList);
 
-  // const inputContent = document.querySelector('.inputContent');
-
-  // const nameTodo = document.querySelector('.todo p');
-  // nameTodo.innerText = inputContent.value;
-
-  const todoElement = document.querySelector('.todo');
-
-  const listTodo = document.querySelector('.list-todo');
-  listTodo.appendChild(todoElement)
 })
+
 
 
 
