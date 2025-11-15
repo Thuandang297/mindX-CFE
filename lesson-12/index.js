@@ -65,8 +65,14 @@
 
 //Bài 4:
 //Lấy ra thẻ input nhập nội dung
+//B1: Lấy dữ liệu từ localStorage
 const dataLocalStorage = localStorage.getItem('arrayList');
+
+//B2: Chuyển dữ liệu từ chuỗi sang mảng
 let arrayList = dataLocalStorage ? dataLocalStorage.split(',') : [];
+
+
+//B3: Duyệt qua từng phần tử trong mảng và tạo thẻ todo
 if (arrayList.length > 0) {
   arrayList.forEach(element => {
     const newTodoHTML = `
@@ -75,15 +81,17 @@ if (arrayList.length > 0) {
     <p>${element}</p>
   </div>
 `;
+//B3: Thêm thẻ todo vào trong danh sách và hiển thị bên dưới
     const listTodo = document.querySelector('.list_todos');
     if (listTodo) {
       listTodo.innerHTML += newTodoHTML; // Thêm vào cuối
     }
   });
 }
+//Bước 1: Lấy ra thẻ button
 const button = document.querySelector('.btn_add');
 
-//Xử lý sự kiện click button thêm mới todo, tại đây sẽ thực hiện thêm mới một phần tử con bằng cách nối chuỗi html
+//Bước 2: Xử lý sự kiện click button thêm mới todo, tại đây sẽ thực hiện thêm mới một phần tử con bằng cách nối chuỗi html
 button.addEventListener('click', function () {
   const inputText = document.querySelector('.input_text');
   const inputValue = inputText.value;
